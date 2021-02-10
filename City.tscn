@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Plane" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16391, 0 )
+light_energy = 0.5
+light_indirect_energy = 0.5
+
+[node name="Desk" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.322292, -2.59412 )
+
+[node name="Tabletop" type="CSGBox" parent="Desk"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00547469, 0.462914, -0.00364995 )
+width = 1.3
+height = 0.07
+depth = 0.7
+
+[node name="Leg1" type="CSGBox" parent="Desk"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54423, 0.0531729, 0.247231 )
+width = 0.07
+height = 0.75
+depth = 0.07
+
+[node name="Leg2" type="CSGBox" parent="Desk"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.555474, 0.053, 0.246456 )
+width = 0.07
+height = 0.75
+depth = 0.07
+
+[node name="Leg3" type="CSGBox" parent="Desk"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.555892, 0.0532467, -0.254471 )
+width = 0.07
+height = 0.75
+depth = 0.07
+
+[node name="Leg4" type="CSGBox" parent="Desk"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544669, 0.053, -0.253623 )
+width = 0.07
+height = 0.75
+depth = 0.07
+
+[node name="Bed" type="CSGCombiner" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2.02562, 0.180659, -1.9452 )
+
+[node name="Bedframe base" type="CSGBox" parent="Bed"]
+width = 1.3
+height = 0.05
+depth = 2.1
+
+[node name="Matress" type="CSGBox" parent="Bed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.127416, -0.0462984 )
+width = 1.32
+height = 0.2
+depth = 2.05
+
+[node name="Bedboard" type="CSGBox" parent="Bed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241147, 1.01435 )
+width = 1.3
+height = 0.5
+depth = 0.07
+
+[node name="Leg1" type="CSGBox" parent="Bed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.613789, -0.0799153, -1.01531 )
+width = 0.07
+height = 0.2
+depth = 0.07
+
+[node name="Leg2" type="CSGBox" parent="Bed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.613514, -0.0799153, -1.01531 )
+width = 0.07
+height = 0.2
+depth = 0.07
+
+[node name="Leg3" type="CSGBox" parent="Bed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.615216, -0.0799153, 1.01509 )
+width = 0.07
+height = 0.2
+depth = 0.07
+
+[node name="Leg4" type="CSGBox" parent="Bed"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.614777, -0.0799153, 1.01478 )
+width = 0.07
+height = 0.2
+depth = 0.07
