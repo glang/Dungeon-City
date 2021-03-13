@@ -106,32 +106,32 @@ transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.184349, 0.285849, 0.67291
 radius = 0.25
 
 [node name="Lamp" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50213, 0, -2.61439 )
 
 [node name="Base" type="CSGCylinder" parent="Lamp"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65451, 0.0165039, -2.64556 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017, 0 )
 radius = 0.2
 height = 0.03
 
 [node name="Pole" type="CSGCylinder" parent="Lamp"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65447, 0.631226, -2.64563 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631, 0 )
 radius = 0.02
 height = 1.2
 
 [node name="Head" type="CSGCombiner" parent="Lamp"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691552, 1.42515, -2.64428 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, 0 )
 
 [node name="Outer sphere" type="CSGSphere" parent="Lamp/Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.962809, 0, 0 )
 radius = 0.2
 
 [node name="Box for halving sphere" type="CSGBox" parent="Lamp/Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.962061, 0.496158, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496, 0 )
 operation = 2
 width = 1.0
 height = 1.0
 depth = 1.0
 
 [node name="Inner sphere" type="CSGSphere" parent="Lamp/Head"]
-transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.959992, 0, 0 )
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
 operation = 2
 radius = 0.2
