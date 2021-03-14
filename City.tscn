@@ -334,9 +334,9 @@ depth = 0.215
 [node name="Roof" type="CSGCombiner" parent="."]
 
 [node name="Left Roof" type="CSGBox" parent="Roof"]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.33791, -0.18918 )
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.47393, -0.325199 )
 width = 7.0
-height = 3.0
+height = 3.3733
 depth = 0.457
 
 [node name="Right Roof" type="CSGBox" parent="Roof"]
@@ -354,4 +354,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85905, 0, 0 )
 transform = Transform( 0.3, 0, 0, 0, 1, 0, 0, 0, 1, -1.65515, 0, 0 )
 
 [node name="Triangle Beams4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.3, 0, 0, 0, 1, 0, 0, 0, 1, 0.290002, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 1, 0, 0, 0, 1, -1.65515, 0, 0 )
