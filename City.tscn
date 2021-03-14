@@ -180,3 +180,100 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000781052, 1.0073, 0.230444 
 width = 0.42
 height = 0.1
 depth = 0.04
+
+[node name="Chest" type="CSGCombiner" parent="."]
+
+[node name="Base" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200763, 0 )
+width = 0.8
+height = 0.4
+depth = 0.5
+
+[node name="CSGBox6" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384137, 0 )
+width = 0.82
+height = 0.04
+depth = 0.54
+
+[node name="CSGBox7" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0218969, 0 )
+width = 0.82
+height = 0.04
+depth = 0.54
+
+[node name="CSGBox2" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.370911, 0.20242, -0.230434 )
+width = 0.08
+height = 0.4
+depth = 0.08
+
+[node name="Lock" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378546, 0.318127, -0.230343 )
+width = 0.08
+height = 0.1
+depth = 0.08
+
+[node name="CSGBox3" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.370911, 0.20242, 0.230451 )
+width = 0.08
+height = 0.4
+depth = 0.08
+
+[node name="CSGBox4" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36841, 0.20242, -0.230434 )
+width = 0.08
+height = 0.4
+depth = 0.08
+
+[node name="CSGBox5" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36841, 0.20242, 0.230451 )
+width = 0.08
+height = 0.4
+depth = 0.08
+
+[node name="Lid" type="CSGCylinder" parent="Chest"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402481, 0 )
+radius = 0.25
+height = 0.8
+
+[node name="Left Lid Metal" type="CSGCombiner" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371606, 0, 0 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Chest/Left Lid Metal"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
+radius = 0.27
+height = 0.08
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Chest/Left Lid Metal"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
+operation = 2
+radius = 0.25
+height = 0.085
+
+[node name="CSGBox" type="CSGBox" parent="Chest/Left Lid Metal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0 )
+operation = 2
+width = 0.1
+height = 0.3
+depth = 0.54
+
+[node name="Right Lid Metal" type="CSGCombiner" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37045, 0, 0 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Chest/Right Lid Metal"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
+radius = 0.27
+height = 0.08
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Chest/Right Lid Metal"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
+operation = 2
+radius = 0.25
+height = 0.085
+
+[node name="CSGBox" type="CSGBox" parent="Chest/Right Lid Metal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0 )
+operation = 2
+width = 0.1
+height = 0.3
+depth = 0.54
