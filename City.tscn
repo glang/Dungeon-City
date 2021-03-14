@@ -125,11 +125,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, 0 )
 radius = 0.2
 
 [node name="Box for halving sphere" type="CSGBox" parent="Lamp/Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103177, 0 )
 operation = 2
-width = 1.0
-height = 1.0
-depth = 1.0
+width = 0.5
+height = 0.2
+depth = 0.5
 
 [node name="Inner sphere" type="CSGSphere" parent="Lamp/Head"]
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
@@ -235,6 +235,7 @@ depth = 0.08
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402481, 0 )
 radius = 0.25
 height = 0.8
+sides = 16
 
 [node name="Left Lid Metal" type="CSGCombiner" parent="Chest"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371606, 0, 0 )
@@ -243,12 +244,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371606, 0, 0 )
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
 radius = 0.27
 height = 0.08
+sides = 16
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Chest/Left Lid Metal"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
 operation = 2
 radius = 0.25
 height = 0.085
+sides = 16
 
 [node name="CSGBox" type="CSGBox" parent="Chest/Left Lid Metal"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0 )
@@ -264,12 +267,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37045, 0, 0 )
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
 radius = 0.27
 height = 0.08
+sides = 16
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Chest/Right Lid Metal"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
 operation = 2
 radius = 0.25
 height = 0.085
+sides = 16
 
 [node name="CSGBox" type="CSGBox" parent="Chest/Right Lid Metal"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0 )
@@ -277,3 +282,21 @@ operation = 2
 width = 0.1
 height = 0.3
 depth = 0.54
+
+[node name="House" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5784 )
+
+[node name="Walls" type="CSGCombiner" parent="House"]
+
+[node name="walls box" type="CSGBox" parent="House/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0877371, 1.24686, 0.21628 )
+width = 6.06063
+height = 2.5
+depth = 3.86659
+
+[node name="walls subtract" type="CSGBox" parent="House/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0977106, 1.6735, 0.21628 )
+operation = 2
+width = 5.62283
+height = 3.53289
+depth = 3.5324
