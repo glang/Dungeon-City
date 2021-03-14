@@ -10,7 +10,7 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16391, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.41245, -1.35744 )
 light_energy = 0.5
 light_indirect_energy = 0.5
 
@@ -208,7 +208,7 @@ height = 0.4
 depth = 0.08
 
 [node name="Lock" type="CSGBox" parent="Chest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378546, 0.318127, -0.230343 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378546, 0.318127, -0.242044 )
 width = 0.08
 height = 0.1
 depth = 0.08
@@ -300,3 +300,23 @@ operation = 2
 width = 5.62283
 height = 3.53289
 depth = 3.5324
+
+[node name="door subtract" type="CSGBox" parent="House/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99408, 0.996389, -0.428353 )
+operation = 2
+width = 0.249878
+depth = 0.9
+
+[node name="Roof" type="CSGCombiner" parent="House"]
+
+[node name="Left" type="CSGBox" parent="House/Roof"]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.33791, 1.38922 )
+width = 7.0
+height = 3.0
+depth = 0.457
+
+[node name="Right" type="CSGBox" parent="House/Roof"]
+transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.33791, -0.946576 )
+width = 7.0
+height = 3.0
+depth = 0.457
