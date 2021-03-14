@@ -1,0 +1,39 @@
+[gd_scene format=2]
+
+[node name="Triangle Beams" type="CSGCombiner"]
+
+[node name="Left front wall beam" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 3.00223, 3.26993, -0.54062 )
+width = 0.5
+height = 2.45
+depth = 0.2
+
+[node name="Right front wall beam" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.00223, 3.25565, -2.17145 )
+width = 0.5
+height = 2.4
+depth = 0.2
+
+[node name="Front wall horizontal beam" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00627, 3.0418, -1.34436 )
+width = 0.5
+height = 0.2
+depth = 2.01408
+
+[node name="Front wall vertical beam" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00627, 3.54995, -1.34436 )
+width = 0.5
+height = 0.85
+depth = 0.2
+
+[node name="Front wall left tilt beam" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 3.00627, 3.32897, -1.13873 )
+width = 0.5
+height = 0.6
+depth = 0.2
+
+[node name="Front wall right tilt beam" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 3.00627, 3.35773, -1.56803 )
+width = 0.5
+height = 0.6
+depth = 0.2
