@@ -9,6 +9,7 @@
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
 [node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0351571 )
 
 [node name="Plane" type="MeshInstance" parent="."]
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
@@ -304,8 +305,20 @@ height = 0.2
 depth = 0.2
 
 [node name="Right side beam" type="CSGBox" parent="House"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133953, 2.43761, -1.48607 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133953, 2.44325, -1.48607 )
 width = 5.74276
+height = 0.2
+depth = 0.2
+
+[node name="front beam" type="CSGBox" parent="House"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.22478, 2.42218, 0.200765 )
+width = 3.77618
+height = 0.2
+depth = 0.2
+
+[node name="back beam" type="CSGBox" parent="House"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2.96767, 2.42218, 0.200767 )
+width = 3.77618
 height = 0.2
 depth = 0.2
 
@@ -331,14 +344,21 @@ width = 0.249878
 depth = 0.9
 
 [node name="front roof gap" type="CSGPolygon" parent="Walls"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.12164, 2.44442, -0.906594 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.11887, 2.44442, -0.906594 )
 polygon = PoolVector2Array( -1.37072, 0.0412483, 0.359117, 1.76981, 0.512464, 1.76981, 2.33803, 0.0391729 )
-depth = 0.215
+depth = 0.21
 
 [node name="back roof gap" type="CSGPolygon" parent="Walls"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2.72275, 2.44442, -0.981512 )
 polygon = PoolVector2Array( -1.37072, 0.0412483, 0.359117, 1.76981, 0.512464, 1.76981, 2.33803, 0.0391729 )
 depth = 0.215
+
+[node name="front window sub" type="CSGBox" parent="Walls"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.02043, 1.33353, -0.48175 )
+operation = 2
+width = 0.727198
+height = 0.68871
+depth = 0.339711
 
 [node name="Roof" type="CSGCombiner" parent="."]
 
@@ -367,4 +387,4 @@ transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, -1.03244, 3.04624, -1.3662 )
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0.815106, 3.04624, -1.3662 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.0273285, 0, 0.999627, 0, 1, 0, -0.999627, 0, -0.0273285, 1.22369, 1.08671, -0.998776 )
+transform = Transform( -0.0273285, 0, 0.999627, 0, 1, 0, -0.999627, 0, -0.0273285, 1.22369, 0.90986, -0.998776 )
