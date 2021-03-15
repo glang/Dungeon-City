@@ -5,6 +5,7 @@ onready var camera = $Pivot/Camera
 var gravity = -30
 var max_speed = 3
 var mouse_sensitivity = 0.002  # radians/pixel
+var jump_speed = 6
 
 var velocity = Vector3()
 
@@ -31,6 +32,8 @@ func get_input():
 		input_dir += -camera.global_transform.basis.x
 	if Input.is_action_pressed("strafe_right"):
 		input_dir += camera.global_transform.basis.x
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_speed
 	input_dir = input_dir.normalized()
 	return input_dir
 	
