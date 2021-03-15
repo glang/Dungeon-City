@@ -2,7 +2,6 @@
 
 [ext_resource path="res://materials/DarkWood.tres" type="Material" id=1]
 
-
 [node name="Triangle Beams" type="CSGCombiner"]
 material_override = ExtResource( 1 )
 
@@ -31,7 +30,7 @@ height = 0.85
 depth = 0.2
 
 [node name="Front wall left tilt beam" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.287198, 0.206276 )
+transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.294233, 0.202759 )
 width = 0.5
 height = 0.6
 depth = 0.2

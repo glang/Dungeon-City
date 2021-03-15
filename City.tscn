@@ -7,7 +7,7 @@
 [ext_resource path="res://materials/DarkWood.tres" type="Material" id=5]
 [ext_resource path="res://materials/White.tres" type="Material" id=6]
 [ext_resource path="res://materials/LightGray.tres" type="Material" id=7]
-[ext_resource path="res://copied_default_env.tres" type="Environment" id=8]
+[ext_resource path="res://House_env.tres" type="Environment" id=8]
 [ext_resource path="res://materials/Green.tres" type="Material" id=9]
 [ext_resource path="res://materials/Metal.tres" type="Material" id=10]
 [ext_resource path="res://materials/Wall.tres" type="Material" id=11]
@@ -402,10 +402,17 @@ depth = 0.215
 material = ExtResource( 11 )
 
 [node name="front window sub" type="CSGBox" parent="Walls"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.02043, 1.33353, -0.48175 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.02043, 1.19842, -0.48175 )
 operation = 2
-width = 0.727198
-height = 0.68871
+width = 0.7
+height = 0.9
+depth = 0.339711
+
+[node name="desk window sub" type="CSGBox" parent="Walls"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0373177, 1.33929, -3.26339 )
+operation = 2
+width = 1.5
+height = 1.0
 depth = 0.339711
 
 [node name="Roof" type="CSGCombiner" parent="."]
