@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Triangle Beams.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Wood.tres" type="Material" id=3]
+[ext_resource path="res://LightWood.tres" type="Material" id=4]
+[ext_resource path="res://DarkWood.tres" type="Material" id=5]
+[ext_resource path="res://White.tres" type="Material" id=6]
+[ext_resource path="res://Gray.tres" type="Material" id=7]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -28,6 +33,7 @@ light_indirect_energy = 0.5
 
 [node name="Desk" type="CSGCombiner" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.322292, -2.59412 )
+material_override = ExtResource( 3 )
 
 [node name="Tabletop" type="CSGBox" parent="Desk"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00547469, 0.330021, -0.00364995 )
@@ -66,56 +72,66 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2.0256
 width = 1.3
 height = 0.05
 depth = 2.1
+material = ExtResource( 4 )
 
 [node name="Matress" type="CSGBox" parent="Bed"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.127416, -0.0462984 )
 width = 1.32
 height = 0.2
 depth = 2.05
+material = ExtResource( 7 )
 
 [node name="Bedboard" type="CSGBox" parent="Bed"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241147, 1.01435 )
 width = 1.3
 height = 0.5
 depth = 0.07
+material = ExtResource( 4 )
 
 [node name="Leg1" type="CSGBox" parent="Bed"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.613789, -0.0799153, -1.01531 )
 width = 0.07
 height = 0.2
 depth = 0.07
+material = ExtResource( 4 )
 
 [node name="Leg2" type="CSGBox" parent="Bed"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.613514, -0.0799153, -1.01531 )
 width = 0.07
 height = 0.2
 depth = 0.07
+material = ExtResource( 4 )
 
 [node name="Leg3" type="CSGBox" parent="Bed"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.615216, -0.0799153, 1.01509 )
 width = 0.07
 height = 0.2
 depth = 0.07
+material = ExtResource( 4 )
 
 [node name="Leg4" type="CSGBox" parent="Bed"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.614777, -0.0799153, 1.01478 )
 width = 0.07
 height = 0.2
 depth = 0.07
+material = ExtResource( 4 )
 
 [node name="Pillow" type="CSGCombiner" parent="Bed"]
 
 [node name="CSGSphere" type="CSGSphere" parent="Bed/Pillow"]
 transform = Transform( 1, 0, 0, 0, 0.501728, 0, 0, 0, 1, 0.137872, 0.285849, 0.672915 )
 radius = 0.25
+material = ExtResource( 6 )
 
 [node name="CSGSphere2" type="CSGSphere" parent="Bed/Pillow"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.00268722, 0.285849, 0.672915 )
 radius = 0.25
+material = ExtResource( 6 )
 
 [node name="CSGSphere3" type="CSGSphere" parent="Bed/Pillow"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.184349, 0.285849, 0.672915 )
 radius = 0.25
+material = ExtResource( 6 )
 
 [node name="Lamp" type="CSGCombiner" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50213, 0, -2.61439 )
@@ -150,6 +166,7 @@ radius = 0.2
 
 [node name="Chair" type="CSGCombiner" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.157089, -2.00821 )
+material_override = ExtResource( 3 )
 
 [node name="Seat" type="CSGBox" parent="Chair"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570792, 0 )
@@ -295,28 +312,29 @@ width = 0.1
 height = 0.3
 depth = 0.54
 
-[node name="House" type="CSGCombiner" parent="."]
+[node name="Misc beams" type="CSGCombiner" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5784 )
+material_override = ExtResource( 5 )
 
-[node name="Left side beam" type="CSGBox" parent="House"]
+[node name="Left side beam" type="CSGBox" parent="Misc beams"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133953, 2.43761, 1.9158 )
 width = 5.74276
 height = 0.2
 depth = 0.2
 
-[node name="Right side beam" type="CSGBox" parent="House"]
+[node name="Right side beam" type="CSGBox" parent="Misc beams"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133953, 2.44325, -1.48607 )
 width = 5.74276
 height = 0.2
 depth = 0.2
 
-[node name="front beam" type="CSGBox" parent="House"]
+[node name="front beam" type="CSGBox" parent="Misc beams"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.22478, 2.42218, 0.200765 )
 width = 3.77618
 height = 0.2
 depth = 0.2
 
-[node name="back beam" type="CSGBox" parent="House"]
+[node name="back beam" type="CSGBox" parent="Misc beams"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2.96767, 2.42218, 0.200767 )
 width = 3.77618
 height = 0.2
@@ -384,7 +402,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.81581, 3.04624, -1.3662 )
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, -1.03244, 3.04624, -1.3662 )
 
 [node name="Triangle Beams4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0.815106, 3.04624, -1.3662 )
+transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0.92399, 3.04624, -1.3662 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.0273285, 0, 0.999627, 0, 1, 0, -0.999627, 0, -0.0273285, 1.22369, 0.90986, -0.998776 )
