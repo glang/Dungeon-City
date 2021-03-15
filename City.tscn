@@ -1,12 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Triangle Beams.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Wood.tres" type="Material" id=3]
-[ext_resource path="res://LightWood.tres" type="Material" id=4]
-[ext_resource path="res://DarkWood.tres" type="Material" id=5]
-[ext_resource path="res://White.tres" type="Material" id=6]
-[ext_resource path="res://Gray.tres" type="Material" id=7]
+[ext_resource path="res://materials/Wood.tres" type="Material" id=3]
+[ext_resource path="res://materials/LightWood.tres" type="Material" id=4]
+[ext_resource path="res://materials/DarkWood.tres" type="Material" id=5]
+[ext_resource path="res://materials/White.tres" type="Material" id=6]
+[ext_resource path="res://materials/LightGray.tres" type="Material" id=7]
+[ext_resource path="res://copied_default_env.tres" type="Environment" id=8]
+[ext_resource path="res://materials/Green.tres" type="Material" id=9]
+[ext_resource path="res://materials/Metal.tres" type="Material" id=10]
+[ext_resource path="res://materials/Wall.tres" type="Material" id=11]
+[ext_resource path="res://materials/TallLampWood.tres" type="Material" id=12]
+[ext_resource path="res://materials/ChestWood.tres" type="Material" id=13]
+[ext_resource path="res://materials/Glass.tres" type="Material" id=14]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -140,17 +147,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50213, 0, -2.61439 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017, 0 )
 radius = 0.2
 height = 0.03
+material = ExtResource( 12 )
 
 [node name="Pole" type="CSGCylinder" parent="Lamp"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631, 0 )
 radius = 0.02
 height = 1.2
+material = ExtResource( 12 )
 
 [node name="Head" type="CSGCombiner" parent="Lamp"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, 0 )
 
 [node name="Outer sphere" type="CSGSphere" parent="Lamp/Head"]
+material_override = ExtResource( 14 )
 radius = 0.2
+material = ExtResource( 14 )
 
 [node name="Box for halving sphere" type="CSGBox" parent="Lamp/Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103177, 0 )
@@ -158,11 +169,13 @@ operation = 2
 width = 0.5
 height = 0.2
 depth = 0.5
+material = ExtResource( 14 )
 
 [node name="Inner sphere" type="CSGSphere" parent="Lamp/Head"]
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
 operation = 2
 radius = 0.2
+material = ExtResource( 14 )
 
 [node name="Chair" type="CSGCombiner" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.157089, -2.00821 )
@@ -212,75 +225,86 @@ depth = 0.04
 
 [node name="Chest" type="CSGCombiner" parent="."]
 
-[node name="Base" type="CSGBox" parent="Chest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200763, 0 )
-width = 0.8
-height = 0.4
-depth = 0.5
+[node name="CSGBox2" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.389582, 0.20242, -0.249725 )
+width = 0.04
+height = 0.329292
+depth = 0.04
+material = ExtResource( 10 )
+
+[node name="CSGBox4" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389889, 0.20242, -0.249725 )
+width = 0.04
+height = 0.330665
+depth = 0.04
+material = ExtResource( 10 )
+
+[node name="CSGBox5" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389716, 0.20242, 0.251056 )
+width = 0.04
+height = 0.330665
+depth = 0.04
+material = ExtResource( 10 )
+
+[node name="CSGBox3" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.389582, 0.20242, 0.249539 )
+width = 0.04
+height = 0.322854
+depth = 0.04
+material = ExtResource( 10 )
 
 [node name="CSGBox6" type="CSGBox" parent="Chest"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384137, 0 )
 width = 0.82
 height = 0.04
 depth = 0.54
+material = ExtResource( 10 )
 
 [node name="CSGBox7" type="CSGBox" parent="Chest"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0218969, 0 )
 width = 0.82
 height = 0.04
 depth = 0.54
+material = ExtResource( 10 )
 
-[node name="CSGBox2" type="CSGBox" parent="Chest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.370911, 0.20242, -0.230434 )
-width = 0.08
+[node name="Base" type="CSGBox" parent="Chest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200763, 0 )
+width = 0.8
 height = 0.4
-depth = 0.08
+depth = 0.5
+material = ExtResource( 13 )
 
 [node name="Lock" type="CSGBox" parent="Chest"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378546, 0.318127, -0.242044 )
 width = 0.08
 height = 0.1
 depth = 0.08
-
-[node name="CSGBox3" type="CSGBox" parent="Chest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.370911, 0.20242, 0.230451 )
-width = 0.08
-height = 0.4
-depth = 0.08
-
-[node name="CSGBox4" type="CSGBox" parent="Chest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36841, 0.20242, -0.230434 )
-width = 0.08
-height = 0.4
-depth = 0.08
-
-[node name="CSGBox5" type="CSGBox" parent="Chest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36841, 0.20242, 0.230451 )
-width = 0.08
-height = 0.4
-depth = 0.08
+material = ExtResource( 10 )
 
 [node name="Lid" type="CSGCylinder" parent="Chest"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402481, 0 )
 radius = 0.25
 height = 0.8
 sides = 16
+material = ExtResource( 13 )
 
 [node name="Left Lid Metal" type="CSGCombiner" parent="Chest"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371606, 0, 0 )
 
 [node name="CSGCylinder2" type="CSGCylinder" parent="Chest/Left Lid Metal"]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0.0179835, 0.402, 0 )
 radius = 0.27
-height = 0.08
+height = 0.04
 sides = 16
+material = ExtResource( 10 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Chest/Left Lid Metal"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
 operation = 2
-radius = 0.25
+radius = 0.23
 height = 0.085
 sides = 16
+material = ExtResource( 10 )
 
 [node name="CSGBox" type="CSGBox" parent="Chest/Left Lid Metal"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0 )
@@ -293,17 +317,19 @@ depth = 0.54
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37045, 0, 0 )
 
 [node name="CSGCylinder2" type="CSGCylinder" parent="Chest/Right Lid Metal"]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -0.0193516, 0.402, 0 )
 radius = 0.27
-height = 0.08
+height = 0.04
 sides = 16
+material = ExtResource( 10 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Chest/Right Lid Metal"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0.402, 0 )
 operation = 2
-radius = 0.25
+radius = 0.23
 height = 0.085
 sides = 16
+material = ExtResource( 10 )
 
 [node name="CSGBox" type="CSGBox" parent="Chest/Right Lid Metal"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0 )
@@ -341,12 +367,14 @@ height = 0.2
 depth = 0.2
 
 [node name="Walls" type="CSGCombiner" parent="."]
+material_override = ExtResource( 11 )
 
 [node name="walls box" type="CSGBox" parent="Walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0877371, 1.24686, -1.36212 )
 width = 6.06063
 height = 2.5
 depth = 3.86659
+material = ExtResource( 11 )
 
 [node name="walls subtract" type="CSGBox" parent="Walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0977106, 1.2734, -1.36212 )
@@ -365,11 +393,13 @@ depth = 0.9
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.11887, 2.44442, -0.906594 )
 polygon = PoolVector2Array( -1.37072, 0.0412483, 0.359117, 1.76981, 0.512464, 1.76981, 2.33803, 0.0391729 )
 depth = 0.21
+material = ExtResource( 11 )
 
 [node name="back roof gap" type="CSGPolygon" parent="Walls"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2.72275, 2.44442, -0.981512 )
 polygon = PoolVector2Array( -1.37072, 0.0412483, 0.359117, 1.76981, 0.512464, 1.76981, 2.33803, 0.0391729 )
 depth = 0.215
+material = ExtResource( 11 )
 
 [node name="front window sub" type="CSGBox" parent="Walls"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.02043, 1.33353, -0.48175 )
@@ -379,6 +409,7 @@ height = 0.68871
 depth = 0.339711
 
 [node name="Roof" type="CSGCombiner" parent="."]
+material_override = ExtResource( 9 )
 
 [node name="Left Roof" type="CSGBox" parent="Roof"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.47393, -0.325199 )
@@ -406,3 +437,6 @@ transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 0.92399, 3.04624, -1.3662 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.0273285, 0, 0.999627, 0, 1, 0, -0.999627, 0, -0.0273285, 1.22369, 0.90986, -0.998776 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 8 )
