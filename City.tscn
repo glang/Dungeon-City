@@ -476,20 +476,54 @@ height = 0.91578
 depth = 0.03
 
 [node name="Outer top" type="CSGBox" parent="Front window"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.0508871, 0.531869, -0.0646239 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.143886, 0.531869, -0.0646239 )
 width = 0.746199
 height = 0.0940728
-depth = 0.1
+depth = 0.281493
 
 [node name="Outer bottom" type="CSGBox" parent="Front window"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.0139472, -0.415721, -0.0646239 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.0776863, -0.415721, -0.0646239 )
 width = 0.746199
 height = 0.034987
-depth = 0.1
+depth = 0.290731
 
-[node name="Desk window bars" type="CSGCombiner" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0809794, 1.30367, -3.22272 )
+[node name="Desk window" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0351571 )
 
-[node name="CSGCylinder4" type="CSGCylinder" parent="Desk window bars"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20864, 1.15059, -3.19547 )
-radius = 0.01
+[node name="Frame" type="CSGCombiner" parent="Desk window"]
+
+[node name="Frame outer" type="CSGBox" parent="Desk window/Frame"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0386465, 1.35014, -3.2405 )
+width = 1.48596
+height = 0.992487
+depth = 0.25
+material = ExtResource( 13 )
+
+[node name="Frame sub" type="CSGBox" parent="Desk window/Frame"]
+transform = Transform( -0.95, 0, -4.28356e-07, 0, 0.95, 0, 3.69944e-07, 0, -1.1, -0.0386465, 1.35014, -3.2405 )
+operation = 2
+width = 1.48596
+height = 0.992487
+depth = 0.25
+material = ExtResource( 13 )
+
+[node name="Outer top" type="CSGBox" parent="Desk window"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0386465, 1.89829, -3.2405 )
+width = 1.60365
+height = 0.130894
+depth = 0.25
+material = ExtResource( 13 )
+
+[node name="Outer bottom" type="CSGBox" parent="Desk window"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0386465, 0.863676, -3.37475 )
+width = 1.60365
+height = 0.026
+depth = 0.25
+material = ExtResource( 13 )
+
+[node name="divider" type="CSGBox" parent="Desk window"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0418811, 1.35014, -3.2405 )
+width = 0.03
+height = 0.992487
+depth = 0.03
+material = ExtResource( 13 )
