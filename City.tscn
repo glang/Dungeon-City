@@ -14,7 +14,7 @@
 [ext_resource path="res://materials/TallLampWood.tres" type="Material" id=12]
 [ext_resource path="res://materials/ChestWood.tres" type="Material" id=13]
 [ext_resource path="res://materials/Glass.tres" type="Material" id=14]
-[ext_resource path="res://Chalice.fbx" type="PackedScene" id=15]
+[ext_resource path="res://Chalice.tscn" type="PackedScene" id=15]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -637,4 +637,4 @@ transform = Transform( 0.872445, 1.8398e-08, 0.488713, -0.378013, -0.633813, 0.6
 light_energy = 0.8
 
 [node name="Chalice" parent="." instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.423878, 0.785929, -2.53961 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.431114, 0.786655, -2.53179 )
